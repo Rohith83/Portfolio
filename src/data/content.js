@@ -103,11 +103,29 @@ export const projects = [
   {
     title: 'PawCare',
     description:
-      'A modern pet care platform for Indian pet owners, bringing pet profiles, service booking, vet appointments, grooming, and adoption into one seamless experience.',
-    features: ['Pet Profiles', 'Service Booking', 'Vet Appointments', 'Grooming', 'Pet Adoption', 'Dashboard'],
-    tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'React Router', 'Context API', 'Framer Motion'],
-    github: '#',
-    demo: '#',
+  'A premium pet care platform designed for Indian pet owners, offering pet profile management, veterinary appointments, grooming services, adoption, and service booking through a seamless and responsive user experience.',
+
+features: [
+  'Pet Profiles',
+  'Vet Appointment Booking',
+  'Service Booking',
+  'Grooming Services',
+  'Pet Adoption',
+  'User Dashboard',
+  'Responsive Design',
+  'Modern UI/UX'
+],
+
+tech: [
+  'React.js',
+  'JavaScript',
+  'Tailwind CSS',
+  'React Router',
+  'Context API',
+  'Framer Motion'
+],
+    github: 'https://github.com/Rohith83/PawCare',
+    demo: 'https://pawcare-web.netlify.app/',
   },
   {
   title: "StreamNova",
