@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  @apply bg-canvas dark:bg-canvas-dark text-ink dark:text-canvas font-body antialiased;
+}
+
+::selection {
+  background-color: rgba(18, 119, 255, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1277FF;
+  border-radius: 999px;
+}
+
+:focus-visible {
+  outline: 2px solid #1277FF;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.glass {
+  @apply bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #1277FF, #4D9DFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-pad {
+  @apply px-6 sm:px-10 lg:px-20 py-24 lg:py-32;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Case study cover gradients */
+.gradient-streamnova {
+  background: linear-gradient(135deg, #0A0A0F 0%, #073066 55%, #1277FF 100%);
+}
+.gradient-pawcare {
+  background: linear-gradient(135deg, #4D9DFF 0%, #1277FF 50%, #0B4899 100%);
+}
+.gradient-caresync {
+  background: linear-gradient(135deg, #0A0A0F 0%, #0E5FCC 60%, #4D9DFF 100%);
+}
+.gradient-innovspec {
+  background: linear-gradient(135deg, #15151D 0%, #0B4899 50%, #1277FF 100%);
+}
+
+.case-study-progress {
+  @apply fixed top-0 left-0 h-1 bg-brand z-[60] transition-[width] duration-150 ease-out;
+}

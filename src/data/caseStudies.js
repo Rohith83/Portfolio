@@ -1,0 +1,542 @@
+// Conceptual, portfolio-only UX case studies.
+// Research, personas, interviews, and metrics below are fictional and created
+// to demonstrate design + frontend process — not real production data.
+
+export const caseStudies = [
+  {
+    slug: 'streamnova',
+    title: 'StreamNova',
+    category: 'Entertainment · OTT Platform',
+    oneLiner: 'A Netflix-inspired streaming platform built for fast discovery and an immersive watch experience.',
+    cover: 'gradient-streamnova',
+    role: ['UI/UX Designer', 'Frontend Developer'],
+    timeline: 'Portfolio Project · 5 weeks',
+    platform: 'Web (Responsive)',
+    tech: ['React', 'Tailwind CSS', 'React Router', 'Context API', 'Vite', 'Framer Motion'],
+    links: {
+      demo: 'https://streamnova-app.netlify.app/',
+      github: 'https://github.com/Rohith83/streamnova',
+      prototype: null,
+    },
+    overview: {
+      what: 'StreamNova is a full-featured OTT streaming platform concept, recreating the discovery-to-playback experience seen on platforms like Netflix and Prime Video.',
+      why: 'Built to demonstrate how complex, content-heavy interfaces can stay fast and uncluttered, while practicing real-world patterns like watchlists, auth-gated content, and subscription flows.',
+      users: 'Everyday viewers browsing on both desktop and mobile, often undecided about what to watch and easily lost in large content libraries.',
+      businessGoal: 'Increase time-to-first-play and reduce browsing fatigue, the two biggest churn drivers for streaming products.',
+    },
+    problem: {
+      points: [
+        'Large content libraries make it easy for users to feel overwhelmed and abandon browsing without watching anything.',
+        'Generic grid layouts treat every title equally, burying the content users are most likely to want.',
+        'Subscription and auth flows are often bolted on, breaking the immersive feel of the browsing experience.',
+      ],
+      scenario: 'A user opens the app after a long day, wants something to watch within 30 seconds, but is met with an undifferentiated wall of posters and no clear entry point.',
+    },
+    goals: [
+      'Reduce time-to-decision with a clear content hierarchy (hero, trending, continue watching, genres)',
+      'Make search fast and forgiving, with instant visual feedback',
+      'Keep subscription and auth flows lightweight, not blocking exploration',
+      'Maintain a cinematic, dark-first visual identity across all breakpoints',
+    ],
+    research: {
+      note: 'Research below is conceptual, modeled on common patterns observed in publicly available OTT products, created for this portfolio case study.',
+      interviews: [
+        '"I usually scroll for 5 minutes before giving up and rewatching something old." — conceptual user interview, frequent streamer persona',
+        '"I want search to work even if I half-remember the title." — conceptual user interview, casual viewer persona',
+      ],
+      competitive: [
+        'Netflix: strong personalization, but heavy initial load and dense UI on first browse.',
+        'Prime Video: clear categorization, but mixes purchasable and included content with low visual distinction.',
+        'Hotstar: regional content strength, but inconsistent card sizing creates visual noise.',
+      ],
+      insights: [
+        'A strong hero/featured section reduces decision fatigue for undecided viewers.',
+        'Continue Watching needs to be above the fold for returning users.',
+        'Search needs to tolerate partial and fuzzy input.',
+      ],
+    },
+    persona: {
+      name: 'Aravind Suresh',
+      age: 27,
+      occupation: 'Software Engineer',
+      photo: 'initials:AS',
+      goals: ['Find something to watch within a minute', 'Pick up where he left off across devices', 'Discover new shows without endless scrolling'],
+      frustrations: ['Too many similar-looking thumbnails', 'Losing watch progress', 'Slow search with no autocomplete'],
+      techProficiency: 'High — comfortable with keyboard shortcuts and power-user features',
+    },
+    journey: [
+      { stage: 'Landing', detail: 'Sees a cinematic hero banner with one clear featured title' },
+      { stage: 'Browse', detail: 'Scrolls horizontally through curated rows (Trending, Continue Watching, Genres)' },
+      { stage: 'Search', detail: 'Types a partial title, gets instant filtered results' },
+      { stage: 'Watch Details', detail: 'Views synopsis, cast, and similar titles on a dedicated detail view' },
+      { stage: 'Subscription', detail: 'Hits a lightweight, non-blocking plan selection step' },
+      { stage: 'Watch', detail: 'Enters an immersive, distraction-free playback view' },
+    ],
+    ia: [
+      'Home → Hero, Continue Watching, Trending, Genre Rows',
+      'Search → Live Results, Filters',
+      'Title Detail → Synopsis, Cast, Similar Titles',
+      'Watchlist → Saved Titles',
+      'Account → Profile, Subscription, Settings',
+    ],
+    wireframeNote: 'Low-fidelity wireframes focused on row-based horizontal scroll patterns and hero placement before any visual styling was applied.',
+    designSystem: {
+      colors: ['#0A0A0F base', '#1277FF accent', '#15151D surface', 'gradient overlays for posters'],
+      typography: 'Space Grotesk for headings, Inter for body — matching the portfolio-wide system',
+      components: ['Poster Card', 'Horizontal Scroll Row', 'Hero Banner', 'Search Bar', 'Plan Card'],
+    },
+    decisions: [
+      {
+        problem: 'Users abandoned browsing before finding anything to watch.',
+        reasoning: 'A single strong hero recommendation reduces the initial decision space.',
+        solution: 'Added a full-bleed hero banner with one featured title and a direct Play CTA on landing.',
+        impact: 'Conceptually shortens time-to-first-play for undecided viewers.',
+      },
+      {
+        problem: 'Returning users had to re-scroll to find what they were watching.',
+        reasoning: 'Continuity matters more than discovery for returning sessions.',
+        solution: 'Pinned a Continue Watching row directly under the hero, always visible first.',
+        impact: 'Conceptually reduces friction for repeat visits.',
+      },
+    ],
+    beforeAfter: {
+      before: 'Flat grid of equally-sized posters with no clear starting point.',
+      after: 'Hero-first layout with prioritized rows (Continue Watching, Trending, Genres) guiding the eye top to bottom.',
+      why: 'Hierarchy does the decision-making work the user would otherwise have to do themselves.',
+    },
+    responsive: ['Desktop: multi-row horizontal scroll with hover previews', 'Tablet: condensed rows, larger touch targets', 'Mobile: single-column hero, swipeable rows'],
+    accessibility: [
+      'WCAG AA color contrast maintained on all text over poster overlays',
+      'Full keyboard navigation across rows and modals',
+      'Visible focus states on all interactive cards',
+      'Touch targets sized at minimum 44x44px on mobile',
+      'Alt text on all poster images for screen readers',
+    ],
+    challenges: [
+      {
+        title: 'Horizontal scroll performance',
+        detail: 'Large poster rows caused jank on lower-end devices during scroll.',
+        tradeoff: 'Used CSS scroll-snap instead of JS-driven scroll libraries to keep it lightweight.',
+      },
+      {
+        title: 'Dark theme contrast',
+        detail: 'Poster overlays needed enough contrast for text without flattening the artwork.',
+        tradeoff: 'Used a graduated gradient overlay instead of a flat scrim.',
+      },
+    ],
+    results: {
+      metrics: ['+32% conceptual reduction in time-to-first-play', '-25% conceptual browsing abandonment', 'Improved row scroll performance on low-end devices'],
+      disclaimer: 'These metrics are conceptual estimates for this portfolio case study, not measured production data.',
+    },
+    reflection: {
+      learned: 'Content-heavy interfaces benefit more from hierarchy than from more features.',
+      improved: 'Got more deliberate about using motion sparingly — only where it clarifies state changes.',
+      different: 'Would prototype the search interaction in Figma before building it, to test fuzzy-match behavior earlier.',
+    },
+    future: ['Personalized rows based on viewing history', 'Offline download support', 'Multi-profile support per account'],
+    gallery: ['Home / Browse', 'Search Results', 'Title Detail', 'Subscription Plans', 'Playback View'],
+  },
+
+  {
+    slug: 'pawcare',
+    title: 'PawCare',
+    category: 'Pet Care · Service Booking',
+    oneLiner: 'A premium pet care platform for Indian pet owners — appointments, grooming, and adoption in one place.',
+    cover: 'gradient-pawcare',
+    role: ['UI/UX Designer', 'Frontend Developer'],
+    timeline: 'Portfolio Project · 6 weeks',
+    platform: 'Web (Responsive)',
+    tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'React Router', 'Context API', 'Framer Motion'],
+    links: {
+      demo: 'https://pawcare-web.netlify.app/',
+      github: 'https://github.com/Rohith83/PawCare',
+      prototype: null,
+    },
+    overview: {
+      what: 'PawCare is a pet care platform that consolidates vet appointments, grooming bookings, pet profiles, and adoption listings into a single, India-focused experience.',
+      why: 'Built because pet care services in India are typically fragmented across phone calls, WhatsApp groups, and standalone clinic websites with inconsistent UX.',
+      users: 'Urban pet owners managing one or more pets, balancing busy schedules with recurring care needs.',
+      businessGoal: 'Become the default booking layer for local vets and groomers by making scheduling effortless for pet owners.',
+    },
+    problem: {
+      points: [
+        'Booking a vet visit or grooming session usually means a phone call during business hours.',
+        'Pet medical history is scattered across paper records and memory.',
+        'Adoption listings are spread across disconnected Instagram and Facebook posts with no structured filtering.',
+      ],
+      scenario: 'A first-time pet owner needs to book a vaccination appointment but has no central place to see available slots, past records, or trusted clinics nearby.',
+    },
+    goals: [
+      'Make appointment booking self-serve and under 3 taps',
+      'Centralize each pet\u2019s profile and history in one dashboard',
+      'Give adoption listings the same structured browsing experience as service booking',
+      'Keep the interface warm and approachable, not clinical',
+    ],
+    research: {
+      note: 'Research below is conceptual, based on common patterns reported by pet owners in India, created for this portfolio project.',
+      interviews: [
+        '"I just want to see open slots without calling and waiting on hold." — conceptual user interview, working pet owner persona',
+        '"I forget my dog\u2019s last vaccination date constantly." — conceptual user interview, multi-pet owner persona',
+      ],
+      competitive: [
+        'Local clinic websites: informative but rarely support live booking.',
+        'Generic service marketplaces: broad category coverage but no pet-specific profile or history features.',
+        'Social media adoption groups: high reach but zero structure or filtering.',
+      ],
+      insights: [
+        'A persistent pet profile reduces repeated information entry at every booking.',
+        'Visual trust signals (vet ratings, clinic photos) matter more in pet care than generic services.',
+        'Adoption browsing benefits from the same filter patterns as e-commerce (breed, age, location).',
+      ],
+    },
+    persona: {
+      name: 'Priya Ramesh',
+      age: 31,
+      occupation: 'Marketing Manager, first-time dog owner',
+      photo: 'initials:PR',
+      goals: ['Book vet visits without phone calls', 'Track her dog\u2019s medical history in one place', 'Find a trustworthy groomer nearby'],
+      frustrations: ['Clinics with no online booking', 'Re-explaining her pet\u2019s history every visit', 'No way to compare groomers before booking'],
+      techProficiency: 'Medium — comfortable with apps but impatient with multi-step forms',
+    },
+    journey: [
+      { stage: 'Landing', detail: 'Sees a warm, photo-led hero with a clear "Book a Service" entry point' },
+      { stage: 'Pet Profile', detail: 'Creates or selects a pet profile with breed, age, and history' },
+      { stage: 'Book Service', detail: 'Chooses vet, grooming, or boarding and browses available providers' },
+      { stage: 'Appointment', detail: 'Picks a time slot from a live calendar view' },
+      { stage: 'Confirmation', detail: 'Receives a confirmation summary with provider details and add-to-calendar option' },
+    ],
+    ia: [
+      'Home → Hero, Services, Featured Vets',
+      'Pet Profiles → Add/Edit Pet, Medical History',
+      'Services → Vet, Grooming, Boarding',
+      'Booking → Provider List, Slot Picker, Confirmation',
+      'Adoption → Listings, Filters, Pet Detail',
+      'Dashboard → Upcoming Appointments, History',
+    ],
+    wireframeNote: 'Early wireframes tested two booking patterns — modal-based vs full-page flow. Full-page won for reducing accidental dismissal on mobile.',
+    designSystem: {
+      colors: ['Warm neutral base', '#1277FF accent retained for CTAs', 'Soft card shadows for a friendly, non-clinical feel'],
+      typography: 'Space Grotesk for headings, Inter for body, consistent with the rest of the portfolio system',
+      components: ['Pet Profile Card', 'Provider Card', 'Slot Picker', 'Service Category Tile', 'Adoption Card'],
+    },
+    decisions: [
+      {
+        problem: 'Booking required re-entering pet details every time.',
+        reasoning: 'Repetition is the biggest friction point in service booking apps.',
+        solution: 'Built persistent Pet Profiles that auto-fill into every booking flow.',
+        impact: 'Conceptually cuts booking form time significantly for returning users.',
+      },
+      {
+        problem: 'Modal-based booking felt fragile on mobile, easy to dismiss accidentally.',
+        reasoning: 'Multi-step flows need full attention, not a layered overlay.',
+        solution: 'Moved booking to a dedicated full-page flow with a persistent progress indicator.',
+        impact: 'Conceptually reduces drop-off from accidental modal dismissal.',
+      },
+    ],
+    beforeAfter: {
+      before: 'Booking required selecting a provider, then re-entering pet details inside a small modal.',
+      after: 'A dedicated full-page flow that pulls pet details automatically from the saved profile.',
+      why: 'Removing repeated data entry directly reduces the steps between intent and confirmed booking.',
+    },
+    responsive: ['Desktop: two-column layout with persistent pet profile sidebar', 'Tablet: stacked sections with collapsible profile card', 'Mobile: single-column, sticky booking CTA'],
+    accessibility: [
+      'Form fields have explicit labels, not just placeholder text',
+      'Calendar slot picker is fully keyboard-navigable',
+      'Color is never the only indicator for available vs booked slots',
+      'Minimum 44px touch targets on all booking controls',
+      'Screen reader announcements on booking confirmation',
+    ],
+    challenges: [
+      {
+        title: 'Designing trust without verified reviews',
+        detail: 'As a portfolio project, real reviews and ratings data weren\u2019t available.',
+        tradeoff: 'Used clearly labeled placeholder ratings and disclosed this is a conceptual dataset.',
+      },
+      {
+        title: 'Calendar slot picker complexity',
+        detail: 'Needed to represent provider availability without overwhelming the user with grid density.',
+        tradeoff: 'Grouped slots into Morning/Afternoon/Evening bands instead of a raw time grid.',
+      },
+    ],
+    results: {
+      metrics: ['+38% conceptual reduction in booking steps vs phone-call baseline', '-30% conceptual time-to-book', 'Improved clarity in provider comparison'],
+      disclaimer: 'These metrics are conceptual estimates for this portfolio case study, not measured production data.',
+    },
+    reflection: {
+      learned: 'Persistent profiles are one of the highest-leverage UX investments in repeat-booking products.',
+      improved: 'Got better at grouping time-based data (slots) into human-readable bands instead of raw grids.',
+      different: 'Would conduct a small round of real usability testing with actual pet owners before finalizing the booking flow.',
+    },
+    future: ['Vaccination reminder notifications', 'In-app chat with providers', 'Loyalty rewards for repeat bookings'],
+    gallery: ['Home', 'Pet Profile', 'Service Booking', 'Slot Picker', 'Adoption Listings', 'Dashboard'],
+  },
+
+  {
+    slug: 'caresync-ai',
+    title: 'CareSync AI',
+    category: 'Healthcare · AI-Assisted Booking',
+    oneLiner: 'An AI-assisted healthcare platform that simplifies finding doctors, booking visits, and managing records.',
+    cover: 'gradient-caresync',
+    role: ['UI/UX Designer', 'Frontend Developer'],
+    timeline: 'Portfolio Project · 6 weeks',
+    platform: 'Web (Responsive)',
+    tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'React Router', 'Context API', 'Framer Motion', 'Recharts'],
+    links: {
+      demo: 'https://caresync-ai-web.netlify.app/',
+      github: 'https://github.com/Rohith83/CareSync-AI',
+      prototype: null,
+    },
+    overview: {
+      what: 'CareSync AI is a healthcare platform concept that combines doctor discovery, appointment booking, and medical record tracking with a lightweight AI assistant for triage-style guidance.',
+      why: 'Built to explore how AI-assisted flows can reduce the anxiety and friction of navigating healthcare booking, especially for non-urgent concerns.',
+      users: 'Patients unsure which specialist to consult, and patients managing ongoing care across multiple doctors.',
+      businessGoal: 'Reduce missed or delayed care by lowering the effort required to find the right doctor and book a visit.',
+    },
+    problem: {
+      points: [
+        'Patients often don\u2019t know which type of specialist their symptoms require.',
+        'Medical records are split across multiple clinics and rarely consolidated.',
+        'Booking flows in most healthcare apps over-ask for information upfront, before trust is established.',
+      ],
+      scenario: 'A patient with a persistent but non-urgent symptom is unsure whether to see a general physician or a specialist, and gives up rather than guessing wrong.',
+    },
+    goals: [
+      'Reduce uncertainty in choosing the right doctor via guided AI suggestions',
+      'Centralize medical records into one patient-owned timeline',
+      'Make booking fast without demanding excessive upfront information',
+      'Build visual trust through clarity, not clinical sterility',
+    ],
+    research: {
+      note: 'Research below is conceptual, modeled on common patient pain points reported in healthcare UX literature, created for this portfolio project.',
+      interviews: [
+        '"I never know if my symptom needs a GP or a specialist." — conceptual user interview, occasional patient persona',
+        '"My reports are scattered across three different clinics." — conceptual user interview, chronic care patient persona',
+      ],
+      competitive: [
+        'Practo: strong doctor discovery, but record management feels secondary.',
+        'Generic hospital portals: strong records, weak discovery and booking UX.',
+        'Telehealth apps: fast booking, but minimal guidance for choosing the right specialist.',
+      ],
+      insights: [
+        'A lightweight symptom-to-specialist guide reduces booking abandonment from indecision.',
+        'A unified record timeline is valued more by chronic-care patients than occasional visitors.',
+        'Progressive disclosure in booking forms builds more trust than asking for everything upfront.',
+      ],
+    },
+    persona: {
+      name: 'Karthik Iyer',
+      age: 42,
+      occupation: 'Operations Manager, managing a chronic condition',
+      photo: 'initials:KI',
+      goals: ['Find the right specialist quickly', 'Keep all medical records in one place', 'Avoid repeating his medical history at every visit'],
+      frustrations: ['Switching between clinic portals for records', 'Long intake forms before even booking', 'Uncertainty about which doctor to choose'],
+      techProficiency: 'Medium-high — uses apps daily but is cautious with sensitive health data',
+    },
+    journey: [
+      { stage: 'Landing', detail: 'Sees a calm, clear hero with a "Find the right doctor" entry point' },
+      { stage: 'Find Doctor', detail: 'Uses guided AI assistant or manual specialist filter to narrow choices' },
+      { stage: 'Book', detail: 'Selects a doctor and time slot through a progressive, low-friction form' },
+      { stage: 'Consultation', detail: 'Joins or attends the visit with pre-filled context from prior records' },
+      { stage: 'Medical Records', detail: 'Reviews a consolidated timeline of past visits, prescriptions, and reports' },
+    ],
+    ia: [
+      'Home → Hero, AI Assistant Entry, Specialist Categories',
+      'Find Doctor → AI Guided Flow, Manual Filters, Doctor Profiles',
+      'Booking → Slot Picker, Progressive Intake Form, Confirmation',
+      'Records → Timeline, Reports, Prescriptions',
+      'Dashboard → Upcoming Visits, Record Summary',
+    ],
+    wireframeNote: 'Low-fidelity wireframes explored chat-style vs form-style AI guidance; chat-style tested better for reducing perceived effort.',
+    designSystem: {
+      colors: ['Calm clinical-but-warm palette', '#1277FF accent for primary actions', 'Soft greens reserved for confirmed/healthy states'],
+      typography: 'Space Grotesk for headings, Inter for body, consistent with the wider portfolio system',
+      components: ['AI Assistant Chat Bubble', 'Doctor Profile Card', 'Record Timeline Item', 'Progressive Form Step', 'Specialist Filter Chip'],
+    },
+    decisions: [
+      {
+        problem: 'Patients abandoned booking when unsure which specialist to pick.',
+        reasoning: 'Decision paralysis, not lack of doctors, was the real blocker.',
+        solution: 'Added a lightweight AI-guided assistant that asks 2-3 questions and suggests a specialist category.',
+        impact: 'Conceptually reduces booking abandonment from indecision.',
+      },
+      {
+        problem: 'Long intake forms discouraged completion before trust was built.',
+        reasoning: 'Asking for sensitive details too early increases drop-off.',
+        solution: 'Split intake into progressive steps, asking only for essentials before confirming the slot.',
+        impact: 'Conceptually improves form completion rate.',
+      },
+    ],
+    beforeAfter: {
+      before: 'A single long intake form requesting full medical history before booking was even confirmed.',
+      after: 'A progressive flow that confirms the slot first, then collects details in short, optional steps.',
+      why: 'Securing commitment before asking for sensitive detail builds trust and lowers drop-off.',
+    },
+    responsive: ['Desktop: split-view with assistant chat alongside doctor list', 'Tablet: stacked assistant and results', 'Mobile: full-screen chat-first flow'],
+    accessibility: [
+      'AI assistant responses are screen-reader announced as they appear',
+      'All form steps are keyboard-navigable with clear focus order',
+      'Color-coded record statuses are paired with text labels, not color alone',
+      'Sufficient contrast maintained across all clinical and accent colors',
+      'Touch targets sized appropriately for older or less tech-confident users',
+    ],
+    challenges: [
+      {
+        title: 'Conveying AI guidance without overpromising',
+        detail: 'Needed to clearly position the assistant as a navigation aid, not a diagnostic tool.',
+        tradeoff: 'Added explicit disclaimers and kept suggestions limited to specialist categories, not diagnoses.',
+      },
+      {
+        title: 'Visualizing a medical timeline simply',
+        detail: 'Medical history can get visually dense fast.',
+        tradeoff: 'Used a vertical timeline with collapsible entries instead of a dense table.',
+      },
+    ],
+    results: {
+      metrics: ['+28% conceptual increase in booking completion', '-35% conceptual reduction in intake form abandonment', 'Improved clarity of medical record review'],
+      disclaimer: 'These metrics are conceptual estimates for this portfolio case study, not measured production data.',
+    },
+    reflection: {
+      learned: 'In sensitive domains like healthcare, sequencing trust-building before data collection matters as much as visual design.',
+      improved: 'Learned to design AI-assisted flows that are transparent about their limits rather than implying more capability than they have.',
+      different: 'Would involve a clinician in an informal review pass to sanity-check the specialist-suggestion logic, even at portfolio stage.',
+    },
+    future: ['Integration with wearable health data', 'Multi-language assistant support', 'Family member profile management'],
+    gallery: ['Home / AI Assistant', 'Doctor Discovery', 'Booking Flow', 'Consultation View', 'Medical Records Timeline'],
+  },
+
+  {
+    slug: 'innovspec',
+    title: 'InnovSpec',
+    category: 'B2B · Agency / Product Marketing Site',
+    oneLiner: 'A nine-page agency site built to turn product discovery into qualified conversions.',
+    cover: 'gradient-innovspec',
+    role: ['UI/UX Designer', 'Frontend Developer'],
+    timeline: 'Portfolio Project · 4 weeks',
+    platform: 'Web (Responsive)',
+    tech: ['React', 'Framer Motion', 'Tailwind CSS', 'React Router'],
+    links: {
+      demo: null,
+      github: 'https://github.com/Rohith83',
+      prototype: null,
+    },
+    overview: {
+      what: 'InnovSpec is a nine-page marketing and product site concept built for a fictional product/engineering agency, covering everything from discovery to contact conversion.',
+      why: 'Built to practice structuring a full B2B information architecture, not just a single landing page — including product deep-dives, case studies, and a contact funnel.',
+      users: 'Decision-makers at small-to-mid companies evaluating an agency partner, usually time-pressed and comparing multiple vendors.',
+      businessGoal: 'Convert qualified visitors into discovery calls by clearly communicating capability and credibility fast.',
+    },
+    problem: {
+      points: [
+        'Agency sites often lead with vague value propositions instead of concrete capability.',
+        'Visitors comparing vendors rarely read full pages — they scan for proof and pricing signals.',
+        'Contact forms are frequently the last thing considered, making conversion an afterthought.',
+      ],
+      scenario: 'A founder evaluating three agency websites in one sitting needs to understand capability and credibility within the first 10 seconds on each site.',
+    },
+    goals: [
+      'Communicate core capability within the first viewport',
+      'Make case studies easy to scan, not just read',
+      'Design a contact flow that feels low-commitment, not a hard sell',
+      'Keep the visual language premium and confident throughout all nine pages',
+    ],
+    research: {
+      note: 'Research below is conceptual, modeled on common B2B site evaluation behavior, created for this portfolio project.',
+      interviews: [
+        '"I give a site about 10 seconds before deciding if it\u2019s worth exploring." — conceptual user interview, founder persona',
+        '"I always look for case studies before I even consider filling out a contact form." — conceptual user interview, marketing lead persona',
+      ],
+      competitive: [
+        'Large agency sites: strong visual polish, but slow load times hurt first impressions.',
+        'Boutique studio sites: fast and personal, but often weak on proof of past results.',
+        'SaaS-style agency sites: clear feature/benefit structure, occasionally too templated.',
+      ],
+      insights: [
+        'Above-the-fold clarity matters more than visual flourish for B2B conversion.',
+        'Scannable case study summaries outperform long-form narrative for first-pass evaluation.',
+        'A short, low-friction contact form converts better than a multi-field qualification form upfront.',
+      ],
+    },
+    persona: {
+      name: 'Meera Krishnan',
+      age: 35,
+      occupation: 'Founder, early-stage SaaS startup',
+      photo: 'initials:MK',
+      goals: ['Quickly assess if an agency has relevant experience', 'Compare capability across 3-4 vendor sites efficiently', 'Start a conversation without a heavy commitment'],
+      frustrations: ['Vague "we do everything" messaging', 'Case studies without concrete outcomes', 'Long, intrusive contact forms'],
+      techProficiency: 'High — fluent with digital products, low patience for friction',
+    },
+    journey: [
+      { stage: 'Landing', detail: 'Sees a confident, capability-led hero with clear service pillars' },
+      { stage: 'Discover Product', detail: 'Scans service/product pages with scannable proof points' },
+      { stage: 'Explore Features', detail: 'Reviews case studies structured around problem → solution → result' },
+      { stage: 'Contact', detail: 'Reaches a short, low-friction contact form' },
+      { stage: 'Conversion', detail: 'Submits and receives a clear confirmation of next steps' },
+    ],
+    ia: [
+      'Home → Hero, Services Overview, Featured Case Studies',
+      'Services → Capability Deep-Dives',
+      'Work → Case Study Index',
+      'Case Study Detail → Problem, Solution, Result',
+      'About → Team, Process',
+      'Contact → Short-Form Inquiry',
+    ],
+    wireframeNote: 'Wireframes tested a long single-page scroll vs a multi-page structure; multi-page won for letting visitors jump directly to proof or contact.',
+    designSystem: {
+      colors: ['Confident dark/light duo-tone', '#1277FF accent for CTAs', 'High-contrast typography blocks for scanability'],
+      typography: 'Space Grotesk for large display headings, Inter for body copy, consistent with the wider portfolio system',
+      components: ['Service Pillar Card', 'Case Study Summary Card', 'Proof Stat Block', 'Short Contact Form', 'Page Transition Wrapper'],
+    },
+    decisions: [
+      {
+        problem: 'Visitors weren\u2019t reading case studies in full before bouncing.',
+        reasoning: 'Evaluators scan for problem/result pairs, not narrative prose.',
+        solution: 'Restructured each case study around a scannable Problem → Solution → Result summary block at the top, with detail below.',
+        impact: 'Conceptually improves how quickly a visitor can judge relevance.',
+      },
+      {
+        problem: 'The original contact form asked for too much before any conversation had started.',
+        reasoning: 'Lower commitment at first contact increases form completion.',
+        solution: 'Reduced the form to name, email, and a single open message field.',
+        impact: 'Conceptually reduces drop-off at the conversion step.',
+      },
+    ],
+    beforeAfter: {
+      before: 'Long-form case study pages requiring full reading to find the outcome.',
+      after: 'A scannable summary block (Problem → Solution → Result) at the top of every case study, with full detail available below for those who want it.',
+      why: 'Respecting how B2B evaluators actually read — by scanning first — improves perceived clarity and trust.',
+    },
+    responsive: ['Desktop: multi-column service grids and side-by-side case study summaries', 'Tablet: two-column grids collapse to single column with retained spacing', 'Mobile: stacked sections with sticky contact CTA'],
+    accessibility: [
+      'Semantic heading structure maintained across all nine pages for screen reader navigation',
+      'All interactive cards are keyboard-focusable with visible focus rings',
+      'Form fields include explicit labels and error messaging, not color-only validation',
+      'Color contrast verified against WCAG AA across both light and dark themes',
+      'Page transitions respect prefers-reduced-motion settings',
+    ],
+    challenges: [
+      {
+        title: 'Maintaining consistency across nine pages',
+        detail: 'Risk of visual drift increases with more pages built over multiple sessions.',
+        tradeoff: 'Built a small shared component set (pillar card, stat block, CTA banner) reused across every page instead of one-off layouts.',
+      },
+      {
+        title: 'Balancing premium visuals with fast load times',
+        detail: 'Heavier gradients and motion can hurt perceived performance on a marketing site.',
+        tradeoff: 'Limited heavy motion to hero sections only, keeping inner pages lighter.',
+      },
+    ],
+    results: {
+      metrics: ['+28% conceptual improvement in case study scan completion', '-20% conceptual contact form abandonment', 'Consistent visual system across all 9 pages'],
+      disclaimer: 'These metrics are conceptual estimates for this portfolio case study, not measured production data.',
+    },
+    reflection: {
+      learned: 'Multi-page B2B sites need a strong shared component system early, or visual consistency breaks down fast.',
+      improved: 'Got more disciplined about restructuring content for scanability instead of just making it look good.',
+      different: 'Would map the full sitemap and shared component list before building the first page, rather than discovering shared patterns mid-way.',
+    },
+    future: ['Add a resource/blog section for SEO-driven discovery', 'Add lightweight case study filtering by industry', 'A/B test hero messaging variants'],
+    gallery: ['Home', 'Services', 'Case Study Index', 'Case Study Detail', 'About', 'Contact'],
+  },
+];
+
+export const getCaseStudyBySlug = (slug) => caseStudies.find((c) => c.slug === slug);
