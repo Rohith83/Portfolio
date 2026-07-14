@@ -183,15 +183,6 @@ tech: ["React.js", "JavaScript", "Tailwind CSS", "React Router", "Framer Motion"
     github: 'https://github.com/Rohith83/FinanceFlow',
     demo: 'https://financeflow-ui.netlify.app/',
   },
-  {
-    title: 'InnovSpec',
-    description:
-      'A nine-page agency website built with React and Framer Motion, covering services, case studies, and a conversion-focused contact flow for a fictional product/engineering agency.',
-    features: ['Multi-page Architecture', 'Service Pages', 'Case Studies', 'Smooth Page Transitions', 'Contact Flow', 'Responsive Design'],
-    tech: ['React', 'Framer Motion', 'Tailwind CSS', 'React Router'],
-    github: 'https://github.com/Rohith83',
-    demo: '',
-  },
 ];
 
 // Slugs used to link relevant homepage projects to their full UX case studies
