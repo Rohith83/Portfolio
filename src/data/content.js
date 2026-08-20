@@ -185,13 +185,6 @@ tech: ["React.js", "JavaScript", "Tailwind CSS", "React Router", "Framer Motion"
   },
 ];
 
-// Slugs used to link relevant homepage projects to their full UX case studies
-export const caseStudyLinks = {
-  StreamNova: 'streamnova',
-  PawCare: 'pawcare',
-  'CareSync AI': 'caresync-ai',
-  InnovSpec: 'innovspec',
-};
 
 export const services = [
   {

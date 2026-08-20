@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiFileText } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import { projects, caseStudyLinks } from '../data/content';
+import { projects } from '../data/content';
 import SectionHeading from '../components/SectionHeading';
 import { fadeUp, staggerContainer, viewportOnce } from '../hooks/motionVariants';
 
 function ProjectCard({ project }) {
-  const caseStudySlug = caseStudyLinks[project.title];
 
   return (
     <motion.div
@@ -70,14 +69,6 @@ function ProjectCard({ project }) {
             >
               <FiExternalLink size={16} /> Live Demo
             </a>
-          )}
-          {caseStudySlug && (
-            <Link
-              to={`/case-studies/${caseStudySlug}`}
-              className="flex items-center gap-2 text-sm font-medium text-brand hover:underline"
-            >
-              <FiFileText size={16} /> Case Study
-            </Link>
           )}
         </div>
       </div>

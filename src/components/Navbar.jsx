@@ -168,15 +168,6 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <Link
-                to="/case-studies"
-                onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 text-sm font-medium rounded-xl transition-colors ${
-                  isCaseStudiesActive ? 'text-brand bg-brand/5' : 'text-ink/80 dark:text-white/80'
-                }`}
-              >
-                Case Studies
-              </Link>
             </div>
           </motion.div>
         )}

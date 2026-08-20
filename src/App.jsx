@@ -9,8 +9,6 @@ import ScrollToTop from './components/ScrollToTop';
 import CustomCursor from './components/CustomCursor';
 import Footer from './sections/Footer';
 import Home from './pages/Home';
-import CaseStudies from './pages/CaseStudies';
-import CaseStudyDetail from './pages/CaseStudyDetail';
 
 function ScrollToTopOnNavigate() {
   const { pathname } = useLocation();
@@ -29,8 +27,6 @@ function AppShell() {
       <ScrollToTopOnNavigate />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
       </Routes>
       <Footer />
       <ScrollToTop />
