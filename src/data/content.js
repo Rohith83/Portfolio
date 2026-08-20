@@ -20,7 +20,7 @@ export const personal = {
 };
 
 export const stats = [
-  { label: 'Projects', value: 4 },
+  { label: 'Projects', value: 5 },
   { label: 'Internships', value: 4 },
   { label: 'Core Stack', value: 'React' },
   { label: 'DSA', value: 'Learning' },
@@ -183,6 +183,36 @@ tech: ["React.js", "JavaScript", "Tailwind CSS", "React Router", "Framer Motion"
     github: 'https://github.com/Rohith83/FinanceFlow',
     demo: 'https://financeflow-ui.netlify.app/',
   },
+    {
+  title: 'GRG Tex Care',
+
+  description:
+    'A modern and responsive website for GRG Tex Care, showcasing professional textile machinery erection, commissioning, maintenance, breakdown repair, plant shifting, and technical support services.',
+
+  features: [
+    'Textile Machinery Services',
+    'Machinery Showcase',
+    'Service Overview',
+    'Trusted Companies Marquee',
+    'Responsive Design',
+    'Quote Enquiry Form',
+    'Contact Information',
+    'Mobile Navigation'
+  ],
+
+  tech: [
+    'React.js',
+    'JavaScript',
+    'Tailwind CSS',
+    'React Router',
+    'Framer Motion',
+    'Lucide React',
+    'EmailJS'
+  ],
+
+  github: 'https://github.com/Rohith83/GRG-Tex-Care-Project.git',
+  demo: 'https://grg-tex-care.netlify.app/',
+}
 ];
 
 
