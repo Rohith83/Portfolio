@@ -101,33 +101,6 @@ export const experience = [
 
 export const projects = [
   {
-    title: 'PawCare',
-    description:
-  'A premium pet care platform designed for Indian pet owners, offering pet profile management, veterinary appointments, grooming services, adoption, and service booking through a seamless and responsive user experience.',
-
-features: [
-  'Pet Profiles',
-  'Vet Appointment Booking',
-  'Service Booking',
-  'Grooming Services',
-  'Pet Adoption',
-  'User Dashboard',
-  'Responsive Design',
-  'Modern UI/UX'
-],
-
-tech: [
-  'React.js',
-  'JavaScript',
-  'Tailwind CSS',
-  'React Router',
-  'Context API',
-  'Framer Motion'
-],
-    github: 'https://github.com/Rohith83/PawCare',
-    demo: 'https://pawcare-web.netlify.app/',
-  },
-  {
   title: "StreamNova",
   description:
     "A modern OTT streaming platform inspired by Netflix, built with React and Tailwind CSS. Features responsive movie browsing, search, watchlists, subscription plans, authentication, and an immersive streaming UI/UX.",
@@ -150,6 +123,15 @@ tech: [
   github: "https://github.com/Rohith83/streamnova",
   demo: "https://streamnova-app.netlify.app/",
 },
+ {
+    title: 'FinanceFlow',
+    description:
+  "A modern finance dashboard that helps users track income, expenses, budgets, savings goals, and spending insights through clean charts and a responsive SaaS-style interface.",
+features: ["Dashboard", "Expense Tracking", "Budget Management", "Savings Goals", "Reports", "Insights"],
+tech: ["React.js", "JavaScript", "Tailwind CSS", "React Router", "Framer Motion", "Recharts"],
+    github: 'https://github.com/Rohith83/FinanceFlow',
+    demo: 'https://financeflow-ui.netlify.app/',
+  },
   {
     title: 'CareSync AI',
 description:
@@ -173,15 +155,6 @@ tech: [
 ],
     github: 'https://github.com/Rohith83/CareSync-AI',
     demo: 'https://caresync-ai-web.netlify.app/',
-  },
-  {
-    title: 'FinanceFlow',
-    description:
-  "A modern finance dashboard that helps users track income, expenses, budgets, savings goals, and spending insights through clean charts and a responsive SaaS-style interface.",
-features: ["Dashboard", "Expense Tracking", "Budget Management", "Savings Goals", "Reports", "Insights"],
-tech: ["React.js", "JavaScript", "Tailwind CSS", "React Router", "Framer Motion", "Recharts"],
-    github: 'https://github.com/Rohith83/FinanceFlow',
-    demo: 'https://financeflow-ui.netlify.app/',
   },
     {
   title: 'GRG Tex Care',
@@ -212,7 +185,33 @@ tech: ["React.js", "JavaScript", "Tailwind CSS", "React Router", "Framer Motion"
 
   github: 'https://github.com/Rohith83/GRG-Tex-Care-Project.git',
   demo: 'https://grgtexcare.com/',
-}
+}, {
+    title: 'PawCare',
+    description:
+  'A premium pet care platform designed for Indian pet owners, offering pet profile management, veterinary appointments, grooming services, adoption, and service booking through a seamless and responsive user experience.',
+
+features: [
+  'Pet Profiles',
+  'Vet Appointment Booking',
+  'Service Booking',
+  'Grooming Services',
+  'Pet Adoption',
+  'User Dashboard',
+  'Responsive Design',
+  'Modern UI/UX'
+],
+
+tech: [
+  'React.js',
+  'JavaScript',
+  'Tailwind CSS',
+  'React Router',
+  'Context API',
+  'Framer Motion'
+],
+    github: 'https://github.com/Rohith83/PawCare',
+    demo: 'https://pawcare-web.netlify.app/',
+  }
 ];
 
 
