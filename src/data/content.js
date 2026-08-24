@@ -211,7 +211,7 @@ tech: ["React.js", "JavaScript", "Tailwind CSS", "React Router", "Framer Motion"
   ],
 
   github: 'https://github.com/Rohith83/GRG-Tex-Care-Project.git',
-  demo: 'www.grgtextcare.com',
+  demo: 'www.grgtexcare.com',
 }
 ];
 
